@@ -7,6 +7,33 @@ namespace SReynolds.Extensions
 {
     public static class EnumerableExtensions
     {
+        public static IEnumerable<T> AsEnumerable<T>(this T element)
+        {
+            return ToUnarySequence(element);
+        }
+        
+        public static IEnumerable<T> ToUnarySequence<T>(this T element)
+        {
+            yield return element;
+        }
+        
+        public static IEnumerable<T> Tail<T>(this IEnumerable<T> source)
+        {
+            Contract.Requires<ArgumentOutOfRangeException>(source.Any());
+            
+            return source.Skip(1);
+        }
+        
+        public static IEnumerable<IEnumerable<T>> Paginate<T>(this IEnumerable<T> source, int pageLength)
+        {
+            return source.Partition(pageLength);
+        }
+        
+        public static IEnumerable<T> Paginate<T>(this IEnumerable<T> source, int pageSize, int pageNumber)
+        {
+            return source.Skip(pageNumber * pageSize).Take(pageSize);
+        }
+        
         public static IEnumerable<IEnumerable<T>> Partition<T>(this IEnumerable<T> source, int partitionSize)
         {
             Contract.Requires<ArgumentNullException>(source != null);
