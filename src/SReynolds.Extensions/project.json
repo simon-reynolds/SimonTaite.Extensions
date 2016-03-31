@@ -1,9 +1,9 @@
 {
   "version": "1.0.0-*",
-  "description": "SReynolds.Extensions Class Library",
+  "description": "Extensions for common objects",
   "authors": [ "Simon Reynolds" ],
   "tags": [""],
-  "projectUrl": "",
+  "projectUrl": "https://github.com/simonreynolds7/SReynolds.Extensions",
   "licenseUrl": "",
   "tooling": {
     "defaultNamespace": "SReynolds.Extensions"
@@ -15,6 +15,7 @@
       "dependencies": {
         "Microsoft.CSharp": "4.0.1-beta-23516",
         "System.Collections": "4.0.11-beta-23516",
+        "System.Diagnostics.Contracts": "4.0.1-beta-23516",
         "System.Linq": "4.0.1-beta-23516",
         "System.Runtime": "4.0.21-beta-23516",
         "System.Security.Cryptography.Algorithms": "4.0.0-beta-23516",

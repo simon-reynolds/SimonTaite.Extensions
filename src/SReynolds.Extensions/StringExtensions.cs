@@ -1,10 +1,9 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Diagnostics.Contracts;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace SReynolds.Extensions
 {
@@ -173,6 +172,8 @@ namespace SReynolds.Extensions
         
         public static string CalculateMD5Hash(this string input)
         {
+            Contract.Requires<ArgumentNullException>(input != null);
+            
             // step 1, calculate MD5 hash from input
             var md5 = MD5.Create();
             byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(input.ToLowerInvariant().Trim());
@@ -189,6 +190,8 @@ namespace SReynolds.Extensions
         
         public static string Slugify(this string input)
         {
+            Contract.Requires<ArgumentNullException>(input != null);
+            
             const int SlugLength = 45;
             var str = RemoveAccent(input).ToLower();
             str = Regex.Replace(str, @"\s\(.*\)$", "");
@@ -203,6 +206,8 @@ namespace SReynolds.Extensions
 
         public static string RemoveAccent(this string input)
         {
+            Contract.Requires<ArgumentNullException>(input != null);
+            
             var bytes = System.Text.Encoding.GetEncoding("Cyrillic").GetBytes(input);
             return System.Text.Encoding.ASCII.GetString(bytes);
         }
