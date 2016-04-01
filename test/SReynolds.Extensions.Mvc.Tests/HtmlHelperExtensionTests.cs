@@ -1,31 +1,27 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
+using Microsoft.AspNet.Mvc.ViewFeatures;
 using Xunit;
-
-using SReynolds.Extensions.Mvc
 
 namespace SReynolds.Extensions.Mvc.Tests
 {
-    // see example explanation on xUnit.net website:
-    // https://xunit.github.io/docs/getting-started-dnx.html
     public class HtmlHelperExtensionTests
     {
-        [Fact]
+        //[Fact]
         public void PassingTest()
         {
-            Assert.Equal(4, Add(2, 2));
+            var expected = "Property1";
+            
+            //TODO: Mock does not instantiate HtmlHelper correctly
+            var htmlHelper = Moq.Mock.Of<HtmlHelper<TestClass>>();
+            var actual = HtmlHelperExtensions.FieldIdFor(htmlHelper, m => m.ObjectProperty);
+            
+            Assert.Equal(expected, actual);
         }
-
-        [Fact]
-        public void FailingTest()
+        
+        public class TestClass
         {
-            Assert.Equal(5, Add(2, 2));
-        }
-
-        int Add(int x, int y)
-        {
-            return x + y;
+            public string StringProperty { get; set; }
+            public object ObjectProperty { get; set; }
         }
     }
 }
