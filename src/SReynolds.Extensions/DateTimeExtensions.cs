@@ -68,5 +68,29 @@ namespace SReynolds.Extensions
             return milliseconds - UnixEpochMilliseconds;
 #endif
         }
+        
+        /// <summary>
+        /// Determines if a <see cref="DateTime" /> lies within a specified range
+        /// </summary>
+        /// <param name="dateTime">The <see cref="DateTime" /> to check</param>
+        /// <param name="start">The <see cref="DateTime" /> that represents the start of the range</param>
+        /// <param name="end"></param>
+        /// <returns>True if the <see cref="DateTime" /> lies within the range, False otherwise</returns>
+        public static bool IsWithinRange(this DateTime dateTime, DateTime start, DateTime end)
+        {
+            return dateTime >= start && dateTime <= end;
+        }
+        
+        /// <summary>
+        /// Determines if a <see cref="DateTime" /> lies within a specified range. An EndDate of null is considered equivalent to DateTime.MaxValue
+        /// </summary>
+        /// <param name="dateTime">The <see cref="DateTime" /> to check</param>
+        /// <param name="start">The <see cref="DateTime" /> that represents the start of the range</param>
+        /// <param name="end">The <see cref="Nullable<DateTime>" /> that represents the end of the range</param>
+        /// <returns>True if the <see cref="DateTime" /> lies within the range, False otherwise</returns>
+        public static bool IsWithinRange(this DateTime dateTime, DateTime start, DateTime? end)
+        {
+            return dateTime >= start && dateTime <= end.GetValueOrDefault(DateTime.MaxValue);
+        }
     }
 }
