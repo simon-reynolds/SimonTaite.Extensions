@@ -1,7 +1,7 @@
 {
   "version": "1.0.0-*",
   "description": "Extensions for MVC development",
-  "authors": [ "Simon Reynolds" ],
+  "authors": [ "Simon Taite" ],
   "tags": [""],
   "projectUrl": "https://github.com/simontaite/SimonTaite.Extensions",
   "licenseUrl": "",
