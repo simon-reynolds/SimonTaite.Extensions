@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.Contracts;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -172,7 +171,10 @@ namespace SimonTaite.Extensions
         
         public static string CalculateMD5Hash(this string input)
         {
-            Contract.Requires<ArgumentNullException>(input != null);
+            if (input == null)
+            {
+                throw new ArgumentNullException(nameof(input), @"input cannot be null");
+            }
             
             // step 1, calculate MD5 hash from input
             var md5 = MD5.Create();
@@ -190,7 +192,10 @@ namespace SimonTaite.Extensions
         
         public static string Slugify(this string input)
         {
-            Contract.Requires<ArgumentNullException>(input != null);
+            if (input == null)
+            {
+                throw new ArgumentNullException(nameof(input), @"input cannot be null");
+            }
             
             const int SlugLength = 45;
             var str = RemoveAccent(input).ToLower();
@@ -206,7 +211,10 @@ namespace SimonTaite.Extensions
 
         public static string RemoveAccent(this string input)
         {
-            Contract.Requires<ArgumentNullException>(input != null);
+            if (input == null)
+            {
+                throw new ArgumentNullException(nameof(input), @"input cannot be null");
+            }
             
             var bytes = System.Text.Encoding.GetEncoding("Cyrillic").GetBytes(input);
             return System.Text.Encoding.ASCII.GetString(bytes);

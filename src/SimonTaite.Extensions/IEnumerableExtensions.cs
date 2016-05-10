@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.Contracts;
 using System.Linq;
 
 namespace SimonTaite.Extensions
@@ -19,7 +18,10 @@ namespace SimonTaite.Extensions
         
         public static IEnumerable<T> Tail<T>(this IEnumerable<T> source)
         {
-            Contract.Requires<ArgumentOutOfRangeException>(source.Any());
+            if (!source.Any())
+            {
+                throw new ArgumentOutOfRangeException(nameof(source), @"source must contain at least one entry");
+            }
             
             return source.Skip(1);
         }
@@ -36,7 +38,10 @@ namespace SimonTaite.Extensions
         
         public static IEnumerable<IEnumerable<T>> Partition<T>(this IEnumerable<T> source, int partitionSize)
         {
-            Contract.Requires<ArgumentNullException>(source != null);
+            if (source == null)
+            {
+                throw new ArgumentNullException(nameof(source), @"source cannot be null");
+            }
             
             if (partitionSize <= 0)
             {
@@ -70,8 +75,14 @@ namespace SimonTaite.Extensions
         
         public static IEnumerable<T> DistinctByProperty<T, TKey>(this IEnumerable<T> source, Func<T, TKey> selector)
         {
-            Contract.Requires<ArgumentNullException>(source != null);
-            Contract.Requires<ArgumentNullException>(selector != null);
+            if (source == null)
+            {
+                throw new ArgumentNullException(nameof(source), @"source cannot be null");
+            }
+            if (selector == null)
+            {
+                throw new ArgumentNullException(nameof(selector), @"selector cannot be null");
+            }
             
             return source.GroupBy(selector).Select(g => g.First());
         }
@@ -79,8 +90,14 @@ namespace SimonTaite.Extensions
         public static IEnumerable<T> DynamicDistinct<T>(this IEnumerable<T> source, Func<T, T, bool> func)
             where T : class
         {
-            Contract.Requires<ArgumentNullException>(source != null);
-            Contract.Requires<ArgumentNullException>(func != null);
+            if (source == null)
+            {
+                throw new ArgumentNullException(nameof(source), @"source cannot be null");
+            }
+            if (func == null)
+            {
+                throw new ArgumentNullException(nameof(func), @"func cannot be null");
+            }
             
             var dynamicComparer = new DynamicComparer<T>(func); 
             
