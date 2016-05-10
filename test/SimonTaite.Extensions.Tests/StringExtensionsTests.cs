@@ -30,6 +30,17 @@ namespace SimonTaite.Extensions.Tests
             
             Assert.Equal(expected, result);
         }
+        
+        [Fact]
+        public void SlugifyWorksAsExpected_RemovesMultipleSetsOfBrackets()
+        {
+            var expected = "testing-some-changes";
+            var input = "Testing some (new) changes (blah)";
+            
+            var result = input.Slugify();
+            
+            Assert.Equal(expected, result);
+        }
 
     }
 }

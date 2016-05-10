@@ -199,7 +199,7 @@ namespace SimonTaite.Extensions
             
             const int SlugLength = 45;
             var str = RemoveAccent(input).ToLower();
-            str = Regex.Replace(str, @"\s\(.*\)$", "");
+            str = Regex.Replace(str, @"\([^\)]*\)", "");
 
             str = Regex.Replace(str, @"[^a-z0-9\s-]", ""); // invalid chars           
             str = Regex.Replace(str, @"\s+", " ").Trim(); // convert multiple spaces into one space   
