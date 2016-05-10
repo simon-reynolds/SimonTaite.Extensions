@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0-*",
+  "version": "0.1.0",
   "description": "Extensions for MVC development",
   "authors": [ "Simon Taite" ],
   "tags": [""],
@@ -17,7 +17,6 @@
       "dependencies": {
         "Microsoft.CSharp": "4.0.1-beta-23516",
         "System.Collections": "4.0.11-beta-23516",
-        "System.Diagnostics.Contracts": "4.0.1-beta-23516",
         "System.Linq": "4.0.1-beta-23516",
         "System.Runtime": "4.0.21-beta-23516",        
         "System.Threading": "4.0.11-beta-23516"
