@@ -1,10 +1,15 @@
 {
   "version": "0.1.0",
-  "description": "Extensions for MVC development",
+  "title": "Extension methods for MVC development",
+  "summary": "Extension methods for MVC development",
+  "description": "Extension methods for MVC development",
   "authors": [ "Simon Taite" ],
-  "tags": [""],
+  "tags": ["C# MVC Extensions"],
+  "language": "en-US",
+  "copyright": "GLP v3",
   "projectUrl": "https://github.com/simontaite/SimonTaite.Extensions",
-  "licenseUrl": "",
+  "licenseUrl": "https://raw.githubusercontent.com/simontaite/SimonTaite.Extensions/master/LICENSE",
+  "requireLicenseAcceptance": false,
   "tooling": {
     "defaultNamespace": "SimonTaite.Extensions.Mvc"
   },

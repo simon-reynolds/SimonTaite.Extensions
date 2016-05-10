@@ -1,10 +1,15 @@
 {
   "version": "0.1.0",
-  "description": "Extensions for common objects",
+  "title": "Extension methods for common objects",
+  "summary": "Extension methods for common objects",
+  "description": "Extension methods for common objects",
   "authors": [ "Simon Taite" ],
-  "tags": [""],
+  "tags": ["C# Extensions"],
+  "language": "en-US",
+  "copyright": "GLP v3",
   "projectUrl": "https://github.com/simontaite/SimonTaite.Extensions",
-  "licenseUrl": "",
+  "licenseUrl": "https://raw.githubusercontent.com/simontaite/SimonTaite.Extensions/master/LICENSE",
+  "requireLicenseAcceptance": false,
   "tooling": {
     "defaultNamespace": "SimonTaite.Extensions"
   },
