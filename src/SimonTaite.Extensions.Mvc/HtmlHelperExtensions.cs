@@ -3,7 +3,7 @@ using System.Diagnostics.Contracts;
 using System.Linq.Expressions;
 using Microsoft.AspNet.Mvc.ViewFeatures;
 
-namespace SReynolds.Extensions.Mvc
+namespace SimonTaite.Extensions.Mvc
 {
     public static class HtmlHelperExtensions
     {

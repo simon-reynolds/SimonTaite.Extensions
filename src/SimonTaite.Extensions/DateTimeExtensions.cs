@@ -1,6 +1,6 @@
 using System;
 
-namespace SReynolds.Extensions
+namespace SimonTaite.Extensions
 {
     public static class DateTimeExtensions
     {

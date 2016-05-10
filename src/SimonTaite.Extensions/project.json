@@ -3,10 +3,10 @@
   "description": "Extensions for common objects",
   "authors": [ "Simon Reynolds" ],
   "tags": [""],
-  "projectUrl": "https://github.com/simonreynolds7/SReynolds.Extensions",
+  "projectUrl": "https://github.com/simontaite/SimonTaite.Extensions",
   "licenseUrl": "",
   "tooling": {
-    "defaultNamespace": "SReynolds.Extensions"
+    "defaultNamespace": "SimonTaite.Extensions"
   },
 
   "frameworks": {

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using Xunit;
 
-using SReynolds.Extensions;
+using SimonTaite.Extensions;
 
-namespace SReynolds.Extensions.Tests
+namespace SimonTaite.Extensions.Tests
 {
     public class DateTimeExtensionsTests
     {

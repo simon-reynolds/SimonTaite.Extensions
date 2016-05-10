@@ -2,7 +2,7 @@ using System;
 using Microsoft.AspNet.Mvc.ViewFeatures;
 using Xunit;
 
-namespace SReynolds.Extensions.Mvc.Tests
+namespace SimonTaite.Extensions.Mvc.Tests
 {
     public class HtmlHelperExtensionTests
     {

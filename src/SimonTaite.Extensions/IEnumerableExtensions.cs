@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using System.Linq;
 
-namespace SReynolds.Extensions
+namespace SimonTaite.Extensions
 {
     public static class EnumerableExtensions
     {

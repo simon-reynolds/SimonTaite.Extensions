@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace SReynolds.Extensions
+namespace SimonTaite.Extensions
 {
     public static class StringExtensions
     {

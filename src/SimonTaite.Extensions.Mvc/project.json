@@ -3,10 +3,10 @@
   "description": "Extensions for MVC development",
   "authors": [ "Simon Reynolds" ],
   "tags": [""],
-  "projectUrl": "https://github.com/simonreynolds7/SReynolds.Extensions",
+  "projectUrl": "https://github.com/simontaite/SimonTaite.Extensions",
   "licenseUrl": "",
   "tooling": {
-    "defaultNamespace": "SReynolds.Extensions.Mvc"
+    "defaultNamespace": "SimonTaite.Extensions.Mvc"
   },
   "dependencies": {
       "Microsoft.AspNet.Mvc": "6.0.0-rc1-final"
