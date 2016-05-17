@@ -24,7 +24,7 @@
     "test": "xunit.runner.dnx"
   },
   "frameworks": {
-    "netcoreapp1.0": {
+    "netstandard1.5": {
       "imports": ["dnxcore50", "dotnet5.4", "net45"]
     }
   }

@@ -23,7 +23,7 @@
     "Microsoft.AspNetCore.Mvc": "1.0.0-rc2-final"
   },
   "frameworks": {
-    "netcoreapp1.0": {
+    "netstandard1.5": {
       "imports": ["dnxcore50", "dotnet5.4", "net45"]
     }
   }
