@@ -1,5 +1,5 @@
 using System;
-using Microsoft.AspNet.Mvc.ViewFeatures;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Xunit;
 
 namespace SimonTaite.Extensions.Mvc.Tests
