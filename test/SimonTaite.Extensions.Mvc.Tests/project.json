@@ -15,7 +15,7 @@
   "dependencies": {
     "xunit": "2.1.0",
     "xunit.runner.dnx": "2.1.0-rc1-build204",
-    "SimonTaite.Extensions.Mvc": "1.0.0-*",
+    "SimonTaite.Extensions.Mvc": "0.1.1",
     "Microsoft.AspNet.Mvc": "6.0.0-rc1-final",
     "Moq": "4.2.1510.2205",
     "Microsoft.Extensions.Options": "0.0.1-alpha",
