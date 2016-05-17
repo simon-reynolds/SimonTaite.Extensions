@@ -1,10 +1,11 @@
 {
   "version": "0.1.2",
-  "title": "Extension methods for common objects",  
+  "title": "Extension methods for common objects",
+  "summary": "Extension methods for common objects",
   "description": "Extension methods for common objects",
   "authors": [ "Simon Taite" ],  
   "language": "en-US",
-  "copyright": "GLP v3",  
+  "copyright": "MIT (c) 2016 Simon Taite", 
   "packOptions": {
     "summary": "Extension methods for common objects",
     "tags": ["C# Extensions"],

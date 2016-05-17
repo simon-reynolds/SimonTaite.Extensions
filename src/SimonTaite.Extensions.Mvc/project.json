@@ -4,7 +4,7 @@
   "description": "Extension methods for MVC development",
   "authors": [ "Simon Taite" ],
   "language": "en-US",
-  "copyright": "GLP v3",
+  "copyright": "MIT (c) 2016 Simon Taite",
   "packOptions":{
     "summary": "Extension methods for MVC development",
     "tags": ["C# MVC Extensions"],
