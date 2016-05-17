@@ -1,5 +1,5 @@
 {
-  "version": "0.1.1",
+  "version": "0.1.2",
   "title": "Extension methods for common objects",
   "summary": "Extension methods for common objects",
   "description": "Extension methods for common objects",
@@ -13,20 +13,15 @@
   "tooling": {
     "defaultNamespace": "SimonTaite.Extensions"
   },
-
+  "dependencies": {
+    "Microsoft.NETCore.App": {
+      "type": "platform",
+      "version": "1.0.0-rc2-3002702"
+    }
+  },
   "frameworks": {
-    "net451": { },
-    "dotnet5.4": {
-      "dependencies": {
-        "Microsoft.CSharp": "4.0.1-beta-23516",
-        "System.Collections": "4.0.11-beta-23516",
-        "System.Linq": "4.0.1-beta-23516",
-        "System.Runtime": "4.0.21-beta-23516",
-        "System.Security.Cryptography.Algorithms": "4.0.0-beta-23516",
-        "System.Text.Encoding": "4.0.11-beta-23516",
-        "System.Text.RegularExpressions": "4.0.11-beta-23516",
-        "System.Threading": "4.0.11-beta-23516"
-      }
+    "netcoreapp1.0": {
+      "imports": ["dnxcore50", "dotnet5.4", "net45"]
     }
   }
 }
