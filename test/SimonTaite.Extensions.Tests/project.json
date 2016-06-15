@@ -1,10 +1,6 @@
 {
     "version": "1.0.0-*",
-    "description": "",
-    "authors": [ "" ],
-    "tooling": {
-      "defaultNamespace": "SimonTaite.Extensions.Tests"
-    },
+    "testRunner": "xunit",
     "dependencies": {
         "Microsoft.NETCore.App": {
             "type": "platform",
@@ -12,14 +8,11 @@
         },
         "xunit": "2.1.0",
         "dotnet-test-xunit": "1.0.0-rc2-build10015",
-        "SimonTaite.Extensions" : "0.1.2"
-    },
-    "commands": {
-        "test": "xunit.runner.dnx"
+        "SimonTaite.Extensions" : "0.1.3"
     },
     "frameworks": {
-    "netstandard1.5": {
-      "imports": ["dnxcore50", "dotnet5.4", "net45"]
+    "netcoreapp1.0": {
+      "imports": ["dnxcore50", "net45"]
     }
   }
 }

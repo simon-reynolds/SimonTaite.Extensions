@@ -19,6 +19,17 @@ namespace SimonTaite.Extensions.Tests
             
             Assert.Equal(expected, result);
         }
+
+        [Fact]
+        public void SlugifyWorksAsExpected_RemovesAccents()
+        {
+            var expected = "this-is-a-test";
+            var input = "This is a tést";
+            
+            var result = input.Slugify();
+            
+            Assert.Equal(expected, result);
+        }
         
         [Fact]
         public void SlugifyWorksAsExpected_RemovesBrackets()
