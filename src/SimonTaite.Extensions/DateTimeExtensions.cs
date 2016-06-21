@@ -3,9 +3,7 @@ using System;
 namespace SimonTaite.Extensions
 {
     public static class DateTimeExtensions
-    {
-
-#if NET451        
+    {       
         // Number of days in a non-leap year
         private const int DaysPerYear = 365;
         // Number of days in 4 years
@@ -23,16 +21,14 @@ namespace SimonTaite.Extensions
         private const long UnixEpochMilliseconds = UnixEpochTicks / TimeSpan.TicksPerMillisecond; // 62,135,596,800,000
         
         private static readonly DateTime UnixEpoch = new System.DateTime(1970,1,1,0,0,0,0,System.DateTimeKind.Utc);
-#endif
        
         public static DateTime FromUnixTimeSeconds(this long timestamp)
         {
 #if DOTNET5_4
             DateTimeOffset dt = DateTimeOffset.FromUnixTimeSeconds(timestamp);
             return dt.DateTime;
-#elif NET451
-            return UnixEpoch.AddSeconds(timestamp);
 #endif
+            return UnixEpoch.AddSeconds(timestamp);
         }
         
         public static DateTime FromUnixTimeMilliseconds(this long timestamp)
@@ -40,9 +36,8 @@ namespace SimonTaite.Extensions
 #if DOTNET5_4
             DateTimeOffset dt = DateTimeOffset.FromUnixTimeMilliseconds(timestamp);
             return dt.DateTime;
-#elif NET451
-            return UnixEpoch.AddMilliseconds(timestamp);
 #endif
+            return UnixEpoch.AddMilliseconds(timestamp);
         }
         
         public static long ToUnixTimeSeconds(this DateTime dateTime)
@@ -50,10 +45,9 @@ namespace SimonTaite.Extensions
 #if DOTNET5_4
             var dt = new DateTimeOffset(dateTime);
             return dt.ToUnixTimeSeconds();
-#elif NET451 
+#endif 
             long seconds = dateTime.Ticks / TimeSpan.TicksPerSecond;
             return seconds - UnixEpochSeconds;
-#endif
         }
         
         public static long ToUnixTimeMilliseconds(this DateTime dateTime)
@@ -61,12 +55,11 @@ namespace SimonTaite.Extensions
 #if DOTNET5_4
             var dt = new DateTimeOffset(dateTime);
             return dt.ToUnixTimeMilliseconds();
-#elif NET451 
+#endif 
             // Truncate sub-millisecond precision before offsetting by the Unix Epoch to avoid
             // the last digit being off by one for dates that result in negative Unix times
             long milliseconds = dateTime.Ticks / TimeSpan.TicksPerMillisecond;
             return milliseconds - UnixEpochMilliseconds;
-#endif
         }
         
         /// <summary>

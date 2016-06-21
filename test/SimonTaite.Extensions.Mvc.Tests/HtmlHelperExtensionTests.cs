@@ -1,5 +1,6 @@
 using System;
-using Microsoft.AspNet.Mvc.ViewFeatures;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using Moq;
 using Xunit;
 
 namespace SimonTaite.Extensions.Mvc.Tests
@@ -12,8 +13,8 @@ namespace SimonTaite.Extensions.Mvc.Tests
             var expected = "Property1";
             
             //TODO: Mock does not instantiate HtmlHelper correctly
-            var htmlHelper = Moq.Mock.Of<HtmlHelper<TestClass>>();
-            var actual = HtmlHelperExtensions.FieldIdFor(htmlHelper, m => m.ObjectProperty);
+            var htmlHelper = new Mock<HtmlHelper<TestClass>>();
+            var actual = HtmlHelperExtensions.FieldIdFor(htmlHelper.Object, m => m.ObjectProperty);
             
             Assert.Equal(expected, actual);
         }

@@ -1,6 +1,7 @@
 using System;
 using System.Linq.Expressions;
-using Microsoft.AspNet.Mvc.ViewFeatures;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using Microsoft.AspNetCore.Mvc.ViewFeatures.Internal;
 
 namespace SimonTaite.Extensions.Mvc
 {

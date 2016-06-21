@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -215,9 +216,20 @@ namespace SimonTaite.Extensions
             {
                 throw new ArgumentNullException(nameof(input), @"input cannot be null");
             }
-            
-            var bytes = System.Text.Encoding.GetEncoding("Cyrillic").GetBytes(input);
-            return System.Text.Encoding.ASCII.GetString(bytes);
+
+            var normalizedString = input.Normalize(NormalizationForm.FormD);
+            var stringBuilder = new StringBuilder();
+
+            foreach (var c in normalizedString)
+            {
+                var unicodeCategory = CharUnicodeInfo.GetUnicodeCategory(c);
+                if (unicodeCategory != UnicodeCategory.NonSpacingMark)
+                {
+                    stringBuilder.Append(c);
+                }
+            }
+
+            return stringBuilder.ToString().Normalize(NormalizationForm.FormC);
         }
     }
 }

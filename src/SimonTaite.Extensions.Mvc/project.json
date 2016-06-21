@@ -1,31 +1,30 @@
 {
-  "version": "0.1.1",
+  "version": "0.1.3",
   "title": "Extension methods for MVC development",
-  "summary": "Extension methods for MVC development",
   "description": "Extension methods for MVC development",
   "authors": [ "Simon Taite" ],
-  "tags": ["C# MVC Extensions"],
   "language": "en-US",
   "copyright": "MIT (c) 2016 Simon Taite",
-  "projectUrl": "https://github.com/simontaite/SimonTaite.Extensions",
-  "licenseUrl": "https://raw.githubusercontent.com/simontaite/SimonTaite.Extensions/master/LICENSE",
-  "requireLicenseAcceptance": false,
+  "packOptions":{
+    "summary": "Extension methods for MVC development",
+    "tags": ["C# MVC Extensions"],
+    "projectUrl": "https://github.com/simontaite/SimonTaite.Extensions",
+    "licenseUrl": "https://raw.githubusercontent.com/simontaite/SimonTaite.Extensions/master/LICENSE",
+    "requireLicenseAcceptance": false  
+  },
   "tooling": {
     "defaultNamespace": "SimonTaite.Extensions.Mvc"
   },
   "dependencies": {
-      "Microsoft.AspNet.Mvc": "6.0.0-rc1-final"
+    "Microsoft.NETCore.App": {
+      "type": "platform",
+      "version": "1.0.0-rc2-3002702"
+    },
+    "Microsoft.AspNetCore.Mvc": "1.0.0-rc2-final"
   },
   "frameworks": {
-    "net451": { },
-    "dotnet5.4": {
-      "dependencies": {
-        "Microsoft.CSharp": "4.0.1-beta-23516",
-        "System.Collections": "4.0.11-beta-23516",
-        "System.Linq": "4.0.1-beta-23516",
-        "System.Runtime": "4.0.21-beta-23516",        
-        "System.Threading": "4.0.11-beta-23516"
-      }
+    "netstandard1.5": {
+      "imports": ["dnxcore50", "dotnet5.4", "net45"]
     }
   }
 }
