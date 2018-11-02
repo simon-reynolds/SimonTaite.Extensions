@@ -18,7 +18,7 @@ namespace SimonTaite.Extensions.Mvc
                 throw new ArgumentNullException(nameof(expression), @"expression cannot be null");
             }
             
-            return htmlHelper.GenerateIdFromName(htmlHelper.FieldNameFor(expression));
+            return htmlHelper.IdFor(expression);
         }
         
         public static string FieldNameFor<T, TResult>(this HtmlHelper<T> htmlHelper, Expression<Func<T, TResult>> expression)
@@ -32,7 +32,7 @@ namespace SimonTaite.Extensions.Mvc
                 throw new ArgumentNullException(nameof(expression), @"expression cannot be null");
             }
             
-            return htmlHelper.ViewData.TemplateInfo.GetFullHtmlFieldName(ExpressionHelper.GetExpressionText(expression));
+            return htmlHelper.NameFor(expression);
         }
     }
 }

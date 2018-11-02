@@ -2,7 +2,7 @@ using Xunit;
 
 using SimonTaite.Extensions;
 
-namespace SimonTaite.Extensions.Tests
+namespace SimonTaite.Extensions.Test.Unit
 {
     public class StringExtensionsTests
     {

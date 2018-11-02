@@ -7,13 +7,16 @@ using System.Text.RegularExpressions;
 
 namespace SimonTaite.Extensions
 {
+    /// <summary>
+    /// A group of extension methods for <see cref="String" />
+    /// </summary>
     public static class StringExtensions
     {
         /// <summary>
         /// Truncates a string containing HTML to a number of text characters, keeping whole words.
         /// The result contains HTML and any tags left open are closed.
         /// </summary>
-        /// <param name="text"></param>
+        /// <param name="html"></param>
         /// <param name="maxCharacters"></param>
         /// <param name="trailingText"></param>
         /// <returns></returns>
@@ -93,7 +96,7 @@ namespace SimonTaite.Extensions
         /// Truncates a string containing HTML to a number of text characters, keeping whole words.
         /// The result contains HTML and any tags left open are closed.
         /// </summary>
-        /// <param name="text"></param>
+        /// <param name="html"></param>
         /// <param name="maxCharacters"></param>
         /// <returns></returns>
         public static string TruncateHtml(this string html, int maxCharacters)
@@ -146,7 +149,6 @@ namespace SimonTaite.Extensions
         /// </summary>
         /// <param name="text"></param>
         /// <param name="maxCharacters"></param>
-        /// <param name="trailingText"></param>
         /// <returns></returns>
         public static string TruncateWords(this string text, int maxCharacters)
         {
@@ -169,7 +171,12 @@ namespace SimonTaite.Extensions
             return Regex.Replace(text.Truncate(maxCharacters),
                 @"\s+[^\s]+$", string.Empty, RegexOptions.IgnoreCase | RegexOptions.Compiled) + trailingText;
         }
-        
+
+        /// <summary>
+        /// Calculate the MD5 hash of an input string
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>        
         public static string CalculateMD5Hash(this string input)
         {
             if (input == null)
@@ -191,6 +198,11 @@ namespace SimonTaite.Extensions
             return sb.ToString();
         }
         
+        /// <summary>
+        /// Return a slug suitable for use in a url based on the input string
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
         public static string Slugify(this string input)
         {
             if (input == null)
@@ -210,6 +222,11 @@ namespace SimonTaite.Extensions
             return str;
         }
 
+        /// <summary>
+        /// Remove accents and diacritics from a given string
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
         public static string RemoveAccent(this string input)
         {
             if (input == null)
