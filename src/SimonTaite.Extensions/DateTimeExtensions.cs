@@ -70,7 +70,7 @@ namespace SimonTaite.Extensions
         }
         
         /// <summary>
-        /// Determines if a <see cref="DateTime" /> lies within a specified range (lower bounce inclusive, upper bound exclusive)
+        /// Determines if a <see cref="DateTime" /> lies within a specified range (lower bound inclusive, upper bound exclusive)
         /// </summary>
         /// <param name="dateTime">The <see cref="DateTime" /> to check</param>
         /// <param name="start">The <see cref="DateTime" /> that represents the start of the range</param>
@@ -82,7 +82,7 @@ namespace SimonTaite.Extensions
         }
         
         /// <summary>
-        /// Determines if a <see cref="DateTime" /> lies within a specified range (lower bounce inclusive, upper bound exclusive)
+        /// Determines if a <see cref="DateTime" /> lies within a specified range (lower bound inclusive, upper bound exclusive)
         /// </summary>
         /// <param name="dateTime">The <see cref="DateTime" /> to check</param>
         /// <param name="start">The <see cref="DateTime" /> that represents the start of the range</param>
