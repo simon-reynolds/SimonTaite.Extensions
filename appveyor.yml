@@ -13,5 +13,6 @@ deploy:
 - provider: NuGet
   api_key:
     secure: uUDcL9MCWdtapIZZSi6h6nvNEU+/erzsl5GH7T/tthQp6Le4xtK55XcDkuyoq8VV
+  artifact: src\*\bin\Release\*.nupkg
   on:
     branch: master
